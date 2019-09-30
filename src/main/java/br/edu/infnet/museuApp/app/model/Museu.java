@@ -21,7 +21,7 @@ public class Museu {
 	private String imagem;
 	private String descricao;
 	
-	//private Set<Obra> acervo = new HashSet<Obra>();
+	private Set<Obra> acervo = new HashSet<Obra>();
 	
 
 	public Museu() {
@@ -74,13 +74,13 @@ public class Museu {
 		this.descricao = descricao;
 	}
 
-//	public Set<Obra> getAcervo() {
-//		return acervo;
-//	}
-//
-//	public void setAcervo(Set<Obra> acervo) {
-//		this.acervo = acervo;
-//	}
+	public Set<Obra> getAcervo() {
+		return acervo;
+	}
+
+	public void setAcervo(Set<Obra> acervo) {
+		this.acervo = acervo;
+	}
 
 	
 }
