@@ -1,4 +1,4 @@
-package br.edu.infnet.todoapp.app.controller;
+package br.edu.infnet.museuApp.app.controller;
 
 import java.util.List;
 import java.util.Objects;
@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.edu.infnet.todoapp.app.model.Todo;
-import br.edu.infnet.todoapp.app.model.persistence.TodoDao;
-import br.edu.infnet.todoapp.app.model.persistence.UsuarioDao;
+import br.edu.infnet.museuApp.app.model.Todo;
+import br.edu.infnet.museuApp.app.model.persistence.TodoDao;
+
 
 
 
@@ -39,8 +39,10 @@ public class TodoService {
 	}
 
 	@Transactional(propagation = Propagation.REQUIRED)
-	public void delete(Integer id) {
-		dao.deletar(id);
+	public void delete(String id) {
+		Objects.requireNonNull(id, "vai para lá com esse id nullo");
+		Integer integer = Integer.valueOf(id);
+		dao.deletar(integer);
 	}
 
 	@Transactional(propagation = Propagation.NEVER)

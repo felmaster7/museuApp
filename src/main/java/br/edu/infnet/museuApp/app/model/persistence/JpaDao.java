@@ -1,4 +1,4 @@
-package br.edu.infnet.todoapp.app.model.persistence;
+package br.edu.infnet.museuApp.app.model.persistence;
 
 import java.lang.reflect.ParameterizedType;
 import java.util.List;

@@ -1,4 +1,4 @@
-package br.edu.infnet.todoapp.app.controller;
+package br.edu.infnet.museuApp.app.controller;
 
 import java.util.List;
 
@@ -9,17 +9,18 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import br.edu.infnet.todoapp.app.model.Todo;
+import br.edu.infnet.museuApp.app.model.Todo;
 
-@Controller
+
+
 public class TodoController {
 
-	@Autowired
+
 	private TodoService service;
 	
 	@RequestMapping(value = "/todos/list", method = RequestMethod.GET)
 	public String list(Model model) {
-		List<Todo> todos = service.getTodos();
+		List<br.edu.infnet.museuApp.app.model.Todo> todos = service.getTodos();
 		model.addAttribute("listaTodos", todos);
 		return "todos/list";
 	}

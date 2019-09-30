@@ -1,4 +1,4 @@
-package br.edu.infnet.todoapp;
+package br.edu.infnet.museuApp;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -13,7 +13,7 @@ import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "br.edu.infnet.todoapp.app")
+@ComponentScan(basePackages = "br.edu.infnet.museuA.app")
 @ImportResource("classpath:**/service-orm.xml")
 public class AppConfig extends WebMvcConfigurerAdapter{
 

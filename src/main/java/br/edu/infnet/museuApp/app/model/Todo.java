@@ -1,4 +1,4 @@
-package br.edu.infnet.todoapp.app.model;
+package br.edu.infnet.museuApp.app.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
