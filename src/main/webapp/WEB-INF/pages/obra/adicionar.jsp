@@ -16,16 +16,18 @@
 <body>
     
 
-   <h2>Adicionar museu</h2>
-   <form action="<c:url value="/museu/add" />" method="post">
-      <label for="tarefa">Nome</label>
+   <h2>Adicionar nova obra</h2>
+   <form action="<c:url value="/obra/add" />" method="post">
+      <label for="tarefa">Nome da obra</label>
       <input type="text" name="nome" id="nome" size="200">
-      <label for="tarefa">Endereço</label>
-      <input type="text" name="endereco" id="endereco" size="200">
-      <label for="tarefa">Imagem</label>
-      <input type="text" name="imagem" id="imagem" size="200">
+      <label for="tarefa">Tipo da Obra</label>
+      <input type="text" name="tipo" id="tipo" size="200">
+      <label for="tarefa">Autor</label>
+      <input type="text" name="autor" id="autor" size="200">
       <label for="tarefa">Descrição</label>
       <input type="text" name="descricao" id="descricao" size="200">
+      <label for="tarefa">Imagem</label>
+      <input type="text" name="imagem" id="imagem" size="200">
       <br/>
       
       <input type="submit" value="Salvar">

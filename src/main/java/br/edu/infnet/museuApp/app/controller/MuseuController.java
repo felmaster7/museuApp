@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import br.edu.infnet.museuApp.app.model.Museu;
+import br.edu.infnet.museuApp.app.model.Obra;
 import br.edu.infnet.museuApp.app.model.Todo;
 
 @Controller
@@ -57,17 +58,16 @@ public class MuseuController {
 	}
 	
 	@RequestMapping(value = "/museu/acervo/{id}", method = RequestMethod.GET)
-	public String obraList(@PathVariable("id") String id, Model model) {
+	public String acervo(@PathVariable("id") String id, Model model) {
 		System.out.println("Entrei acervo do museu");
 		Museu museu = service.getMuseu(id);
 		model.addAttribute("museu", museu);
+		System.out.println(museu);
+		System.out.println(museu.getAcervo());
 		return "museu/acervo";
 	}
-
-	
 	
 
-	
 	public MuseuService getService() {
 		return service;
 	}

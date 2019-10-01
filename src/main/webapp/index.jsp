@@ -16,7 +16,7 @@
 			<h2>MuseuApp</h2>
 			<a href="museu/listar">Museus</a> 
 			<br /> 
-			<a href="todos/list">Obras</a> 
+			<a href="obra/listar">Obras</a> 
 			<br /> 
 			<a href="todos/list">Todos</a> 
 			<br /> 
