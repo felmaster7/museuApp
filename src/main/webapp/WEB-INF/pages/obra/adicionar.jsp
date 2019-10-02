@@ -31,6 +31,7 @@
       <br/>
       
       <input type="submit" value="Salvar">
+      <a href=<c:url value="../obra/listar" />>Voltar</a>
             
    </form>
    

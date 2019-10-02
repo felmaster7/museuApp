@@ -24,7 +24,7 @@
 			<div class="card-columns card-deck m-auto" >
 				<c:forEach var="museu" items="${listaMuseus}" >
 					<div class="card shadow" style="width:400px">
-						<img class="card-img-top" src="${museu.imagem}" alt="Museu Imperial" alt="Card image">
+						<img class="card-img-top" src="${museu.imagem}" style="width:400px">
 						<div class="card-body">
 					  		<h4 class="card-title">${museu.nome}</h4>
 						  	<p class="card-text">${museu.descricao}</p>

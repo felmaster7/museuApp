@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import br.edu.infnet.museuApp.app.model.Museu;
 import br.edu.infnet.museuApp.app.model.Obra;
@@ -18,6 +19,10 @@ public class MuseuController {
 	
 	@Autowired
 	private MuseuService service;
+	@Autowired
+	private ObraService oService;
+	@Autowired
+	private MuseuObraService moService;
 	
 	@RequestMapping(value = "/museu/listar", method = RequestMethod.GET)
 	public String list(Model model) {
@@ -66,8 +71,7 @@ public class MuseuController {
 		System.out.println(museu.getAcervo());
 		return "museu/acervo";
 	}
-	
-
+		
 	public MuseuService getService() {
 		return service;
 	}
@@ -75,5 +79,85 @@ public class MuseuController {
 	public void setService(MuseuService service) {
 		this.service = service;
 	}
+	
+	// OBRA SERVICE
+	
+	@RequestMapping(value = "/obra/listar", method = RequestMethod.GET)
+	public String obraListar(Model model) {
+		System.out.println("Entrei no obra list");
+		List<Obra> obras = oService.getObras();
+		model.addAttribute("listaObras", obras);
+		return "obra/listar";
+	}
+	
+	@RequestMapping(value = "/obra/adicionarObra/{id}", method = RequestMethod.GET)
+	public String adicionarObra(@PathVariable("id")String id, Model model) {
+		System.out.println("Entrei no adicionar obra");
+		List<Obra> obras = oService.getObrasExtras();
+		model.addAttribute("obras", obras);
+		model.addAttribute("museuId", id);
+		return "obra/adicionarObra";
+	}
+	
+	@RequestMapping(value = "/obra/adcionar" , method = RequestMethod.GET)
+	public String viewForm1(Model model) {
+		return "obra/adicionar";
+	}
+	
+	@RequestMapping(value = "/obra/add", method = RequestMethod.POST)
+	public String save(Model model, Obra obra) {
+		oService.persite(obra);
+		return "redirect:/obra/listar";
+	}
+	
+	@RequestMapping(value = "/obra/editar/{id}", method = RequestMethod.GET)
+	public String editO(@PathVariable("id") String id, Model model) {
+		Obra obra = oService.getObra(id);
+		model.addAttribute("obra", obra);
+		return "obra/editar";
+	}
+	
+	@RequestMapping(value = "/obra/update", method = RequestMethod.POST)
+	public String update(Model model, Obra obra) {
+		oService.update(obra);
+		return "redirect:/obra/listar";
+	}
+	
+	@RequestMapping(value = "/obra/deletar/{id}", method = RequestMethod.GET)
+	public String deletarO(@PathVariable("id") String id) {
+		System.out.println("Entrei no obra delatar");
+		oService.delete(id);
+		return "redirect:/obra/listar";
+	}
+
+	public ObraService getoService() {
+		return oService;
+	}
+
+	public void setoService(ObraService oService) {
+		this.oService = oService;
+	}
+	
+	//     MUSEU OBRA SERVICE
+	
+	@RequestMapping(value = "/museu/adicionarObra", method = RequestMethod.GET)
+	public String adicionarObra(@RequestParam("obraId")String obraId,@RequestParam("museuId")String museuId, Model model) {
+		System.out.println("Entrei no adicionar obra");
+		System.out.println(obraId);
+		System.out.println(museuId);
+		moService.updateAdd(obraId, museuId);
+		return "redirect:/museu/acervo/"+museuId;
+	}
+	
+	@RequestMapping(value = "/museu/removerObra", method = RequestMethod.GET)
+	public String removerObra(@RequestParam("obraId")String obraId,@RequestParam("museuId")String museuId, Model model) {
+		System.out.println("Entrei no remover obra");
+		System.out.println(obraId);
+		System.out.println(museuId);
+		moService.updateRemove(obraId, museuId);
+		return "redirect:/museu/acervo/"+museuId;
+	}
+
+
 	
 }

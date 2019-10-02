@@ -1,12 +1,34 @@
 package br.edu.infnet.museuApp.app.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.ForeignKey;
 
 @Entity
-public class Obra {
+public class Obra implements Serializable{
+
+//	@ManyToOne
+//	@JoinColumn(name="museu",nullable=true)
+//	private Museu museu=new Museu();
+//	
+//	public Museu getMuseu() {
+//		return museu;
+//	}
+//
+//	public void setMuseu(Museu museu) {
+//		this.museu = museu;
+//	}
+
+	private static final long serialVersionUID = 1L;
 
 	@Id 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,7 +39,7 @@ public class Obra {
 	private String autor;
 	private String imagem;
 	private String descricao;
-	
+		
 	public Obra() {
 		// TODO Auto-generated constructor stub
 	}

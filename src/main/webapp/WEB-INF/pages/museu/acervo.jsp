@@ -17,21 +17,21 @@
   		<div class="container shadow" >
 			
 			<nav class="navbar navbar-expand-sm bg-dark navbar-dark mb-3">
-				<a class="btn btn-primary col-sm-2" href="<c:url value="/obra/adicionarObra" />"  >Cadastrar nova obra</a>
+				<a class="btn btn-primary col-sm-2" href="<c:url value="/obra/adicionarObra/${museu.id}" />"  >Cadastrar nova obra</a>
 				<div class="col-sm-9"></div>
 				<a class="btn btn-primary col-sm-1" href="<c:url value="/museu/listar" />"  >Retornar</a>
 			</nav> 
 			
 			<div class="card-columns card-deck m-auto" >
 				<c:forEach var="acervo" items="${museu.acervo}" >
-					<div class="card shadow" style="width:400px">
+					<div class="card shadow" style="width:100px">
 						<div class="card-header">${acervo.autor}</div>
 						<img class="card-img-top" src="${acervo.imagem}">
 						<div class="card-body">
 					  		<h4 class="card-title">${acervo.nome}</h4>
 						  	<p class="card-text">${acervo.descricao}</p>
 					 	<div class="card-footer">	
-							<a href="<c:url value="/museu/deletar/${museu.id}" />" >Remover do acervo</a>
+							<a href="<c:url value="/museu/removerObra?obraId=${acervo.id}&museuId=${museu.id}" />" >Remover do acervo</a>
 						</div>
 						</div>
 					</div>

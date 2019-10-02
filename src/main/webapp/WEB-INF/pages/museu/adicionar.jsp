@@ -27,6 +27,7 @@
 	      <input type="text" name="descricao" id="descricao" size="200">
 	      <br/> 
 	      <input type="submit" value="Salvar">
+	      <a href=<c:url value="../museu/listar" />>Voltar</a>
 	            
 	   </form>
 		   
