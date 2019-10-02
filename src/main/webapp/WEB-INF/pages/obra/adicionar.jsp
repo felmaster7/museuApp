@@ -13,25 +13,37 @@
 <meta charset="UTF-8">
 <title>MuseuApp</title>
 </head>
-<body>
+<body >
     
 
    <h2>Adicionar nova obra</h2>
-   <form action="<c:url value="/obra/add" />" method="post">
-      <label for="tarefa">Nome da obra</label>
-      <input type="text" name="nome" id="nome" size="200">
-      <label for="tarefa">Tipo da Obra</label>
-      <input type="text" name="tipo" id="tipo" size="200">
-      <label for="tarefa">Autor</label>
-      <input type="text" name="autor" id="autor" size="200">
-      <label for="tarefa">Descrição</label>
-      <input type="text" name="descricao" id="descricao" size="200">
-      <label for="tarefa">Imagem</label>
-      <input type="text" name="imagem" id="imagem" size="200">
-      <br/>
-      
-      <input type="submit" value="Salvar">
-      <a href=<c:url value="../obra/listar" />>Voltar</a>
+   <form action="<c:url value="/obra/add" />" method="post" >
+   		<div class="form-group">
+	      <label for="nome">Nome da obra:</label>
+	      <input class="form-control" type="text" name="nome" id="nome">
+      	</div>
+      	<div class="form-group">
+	      <label for="tipo">Tipo da Obra:</label>
+	      <input class="form-control" type="text" name="tipo" id="tipo" size="200">
+     	</div>
+      	<div class="form-group">
+	      <label for="autor">Autor:</label>
+	      <input class="form-control" type="text" name="autor" id="autor" size="200">
+	     </div>
+     	<div class="form-group">
+	      <label for="descricao">Descrição:</label>
+	      <input class="form-control" type="text" name="descricao" id="descricao" size="200">
+	    </div>
+      	<div class="form-group">
+	      <label for="imagem">Imagem:</label>
+	      <input class="form-control" type="text" name="imagem" id="imagem" size="200">
+      	</div>
+      	
+      <hr>
+      <div class="btn-group">
+	      <input class="btn btn-primary" type="submit" value="Salvar">
+	      <a class="btn btn-primary" href=<c:url value="../obra/listar" />>Voltar</a>
+	  </div>    
             
    </form>
    

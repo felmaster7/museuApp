@@ -17,22 +17,23 @@
 		
 			<nav class="navbar navbar-expand-sm bg-dark navbar-dark mb-3 row">
 				<a class="btn btn-primary col-sm-3" href="<c:url value="/museu/adcionar" />"  >Cadastrar novo museu</a>
-				<div class="col-sm-8"></div>
+				<div class="col-sm-8" style="text-align:center"><h2 style="color:white">MuseuApp</h2></div>
 				<a class="btn btn-primary col-sm-1" href="<c:url value="../../todoapp" />"  >Retornar</a>
 			</nav> 
 			
 			<div class="card-columns card-deck m-auto" >
 				<c:forEach var="museu" items="${listaMuseus}" >
-					<div class="card shadow" style="width:400px">
-						<img class="card-img-top" src="${museu.imagem}" style="width:400px">
+					<div class="card shadow" style="min-width:33%; max-width:45%">
+						<img class="card-img-top" src="${museu.imagem}" style="height:60%!important; width:100%">
 						<div class="card-body">
 					  		<h4 class="card-title">${museu.nome}</h4>
 						  	<p class="card-text">${museu.descricao}</p>
-						  	
-						  	<a href="<c:url value="/museu/acervo/${museu.id}" />" >Acervo</a>
-					  		<a href="<c:url value="/museu/editar/${museu.id}" />" >Editar</a>
-							<a href="<c:url value="/museu/deletar/${museu.id}" />" >Apagar</a>
-						</div>
+						 </div>
+					  	<div class=" card-footer btn-group">
+						  	<a class="btn btn-primary" href="<c:url value="/museu/acervo/${museu.id}" />" >Acervo</a>
+				  			<a class="btn btn-primary" href="<c:url value="/museu/editar/${museu.id}" />" >Editar</a>
+							<a class="btn btn-danger" href="<c:url value="/museu/deletar/${museu.id}" />" >Apagar</a>
+					  	</div>
 					</div>
 				</c:forEach>
 			</div>

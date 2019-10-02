@@ -17,17 +17,31 @@
 	    	
 	   <h2>Adicionar museu</h2>
 	   <form action="<c:url value="/museu/add" />" method="post">
-	      <label for="tarefa">Nome</label>
-	      <input type="text" name="nome" id="nome" size="200">
-	      <label for="tarefa">Endereço</label>
-	      <input type="text" name="endereco" id="endereco" size="200">
-	      <label for="tarefa">Imagem</label>
-	      <input type="text" name="imagem" id="imagem" size="200">
-	      <label for="tarefa">Descrição</label>
-	      <input type="text" name="descricao" id="descricao" size="200">
-	      <br/> 
-	      <input type="submit" value="Salvar">
-	      <a href=<c:url value="../museu/listar" />>Voltar</a>
+		   <div class="form-group">
+		      <label for="tarefa">Nome</label>
+		      <input class="form-control" type="text" name="nome" id="nome" size="200">
+	     </div>
+	      <div class="form-group">
+		      <label for="tarefa">Endereço</label>
+		      <input class="form-control" type="text" name="endereco" id="endereco" size="200">
+	      </div>
+	      <div class="form-group">
+		      <label for="tarefa">Imagem</label>
+		      <input class="form-control" type="text" name="imagem" id="imagem" size="200">
+	      </div>
+	      <div class="form-group">
+		      <label for="tarefa">Descrição</label>
+		      <input class="form-control" type="text" name="descricao" id="descricao" size="200">
+	      </div>
+	      
+	      <hr>
+	      
+	      <div class="btn-group">
+			<input class="btn btn-primary" type="submit" value="Salvar">
+			<a class="btn btn-primary" href=<c:url value="../museu/listar" />>Voltar</a>
+	      </div>
+	      
+
 	            
 	   </form>
 		   

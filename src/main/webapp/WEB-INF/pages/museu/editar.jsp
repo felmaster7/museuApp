@@ -20,17 +20,30 @@
 	   <form action="<c:url value="/museu/update" />" method="post">
 	   
 	      <input type="hidden" value="${museu.id}" name="id" > 
-	      <label for="tarefa">Nome</label>
-	      <input type="text" value="${museu.nome}" name="nome" id="nome" size="200">
-	      <label for="tarefa">Endereço</label>
-	      <input type="text" value="${museu.endereco}" name="endereco" id="endereco" size="200">
-	      <label for="tarefa">Descrição</label>
-	      <input type="text" value="${museu.descricao}" name="descricao" id="descricao" size="200">
-	      <label for="tarefa">Imagem</label>
-	      <input type="text" value="${museu.imagem}" name="imagem" id="imagem" size="200">
-	      <br/>
+	      <div class="form-group">
+		      <label for="tarefa">Nome</label>
+		      <input class="form-control" type="text" value="${museu.nome}" name="nome" id="nome" size="200">
+	      </div>
+		  <div class="form-group">    
+		      <label for="tarefa">Endereço</label>
+		      <input class="form-control" type="text" value="${museu.endereco}" name="endereco" id="endereco" size="200">
+		  </div>
+		  <div class="form-group">    
+		      <label for="tarefa">Descrição</label>
+		      <input class="form-control" type="text" value="${museu.descricao}" name="descricao" id="descricao" size="200">
+	      </div>
+	      <div class="form-group">
+		      <label for="tarefa">Imagem</label>
+		      <input class="form-control" type="text" value="${museu.imagem}" name="imagem" id="imagem" size="200">
+	      </div>
 	      
-	      <input type="submit" value="Salvar">
+	      <hr>
+	      
+	      <div class="btn-group">
+  		   	<input class="btn btn-primary" type="submit" value="Salvar">
+	      	<a class="btn btn-primary" href=<c:url value="../../museu/listar" />>Retornar</a>
+	      </div>
+
 	   </form>	
 	</body>
 	

@@ -18,21 +18,36 @@
 	 
 	   <h2>Editar ${obra.nome}</h2>
 	   <form action="<c:url value="/obra/update" />" method="post">
-	   
-	      <input type="hidden" value="${obra.id}" name="id" > 
-	      <label for="tarefa">Nome</label>
-	      <input type="text" value="${obra.nome}" name="nome" id="nome" size="200">
-	      <label for="tarefa">Tipo</label>
-	      <input type="text" value="${obra.tipo}" name="tipo" id="tipo" size="200">
-   	      <label for="tarefa">Autor</label>
-	      <input type="text" value="${obra.autor}" name="autor" id="autor" size="200">
-	      <label for="tarefa">Descrição</label>
-	      <input type="text" value="${obra.descricao}" name="descricao" id="descricao" size="200">
-	      <label for="tarefa">Imagem</label>
-	      <input type="text" value="${obra.imagem}" name="imagem" id="imagem" size="200">
-	      <br/>
+	   	
+	   	<input type="hidden" value="${obra.id}" name="id" > 
+	   	<div class="form-group">
+			<label for="tarefa">Título:</label>
+			<input class="form-control" type="text" value="${obra.nome}" name="nome" id="nome" size="200">
+		</div>
+		<div class="form-group">
+			<label for="tarefa">Tipo:</label>
+			<input class="form-control" type="text" value="${obra.tipo}" name="tipo" id="tipo" size="200">
+		</div>
+		<div class="form-group">
+		   <label for="tarefa">Autor:</label>
+			<input class="form-control" type="text" value="${obra.autor}" name="autor" id="autor" size="200">
+		</div>
+		<div class="form-group">
+			<label for="tarefa">Descrição:</label>
+			<input class="form-control" type="text" value="${obra.descricao}" name="descricao" id="descricao" size="200">
+		</div>
+		<div class="form-group">
+			<label for="tarefa">Imagem:</label>
+			<input class="form-control" type="text" value="${obra.imagem}" name="imagem" id="imagem" size="200">
+		</div>
 	      
-	      <input type="submit" value="Salvar">
+	      <hr>
+	      
+	      <div class="btn-group mb-3">
+   		      	<input class="btn btn-primary" type="submit" value="Salvar">
+      			<a class="btn btn-primary" href="<c:url value="../../obra/listar" />" >Retornar</a>
+	      </div>
+
 	   </form>	
 	</body>
 	
