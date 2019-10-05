@@ -7,6 +7,5 @@
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<class>br.edu.infnet.museuApp.app.model.Museu</class>
 		<class>br.edu.infnet.museuApp.app.model.Obra</class>
-		<class>br.edu.infnet.museuApp.app.model.Todo</class>
 	</persistence-unit>
 </persistence>
