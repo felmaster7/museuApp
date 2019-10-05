@@ -38,7 +38,7 @@
 	      
 	      <div class="btn-group">
 			<input class="btn btn-primary" type="submit" value="Salvar">
-			<a class="btn btn-primary" href=<c:url value="../museu/listar" />>Voltar</a>
+			<a class="btn btn-primary" href=<c:url value="../museu/listar" />>Retornar</a>
 	      </div>
 	      
 

@@ -18,7 +18,7 @@
 			<nav class="navbar navbar-expand-sm bg-dark navbar-dark mb-3 row">
 				<a class="btn btn-primary col-sm-3" href="<c:url value="/museu/adcionar" />"  >Cadastrar novo museu</a>
 				<div class="col-sm-8" style="text-align:center"><h2 style="color:white">MuseuApp</h2></div>
-				<a class="btn btn-primary col-sm-1" href="<c:url value="../../todoapp" />"  >Retornar</a>
+				<a class="btn btn-primary col-sm-1" href="<c:url value="../../museuApp" />"  >Retornar</a>
 			</nav> 
 			
 			<div class="card-columns card-deck m-auto" >

@@ -42,7 +42,7 @@
       <hr>
       <div class="btn-group">
 	      <input class="btn btn-primary" type="submit" value="Salvar">
-	      <a class="btn btn-primary" href=<c:url value="../obra/listar" />>Voltar</a>
+	      <a class="btn btn-primary" href=<c:url value="../obra/listar" />>Retornar</a>
 	  </div>    
             
    </form>
